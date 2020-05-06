@@ -1,9 +1,9 @@
 #include <glog/logging.h>
 
+#include "gtest/gtest.h"
 #include "kvstore/db.h"
 #include "kvstore/store.h"
 #include "warble/functions.h"
-#include "gtest/gtest.h"
 
 class FakeDB : public Database {
  public:
