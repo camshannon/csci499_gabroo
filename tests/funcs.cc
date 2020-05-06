@@ -6,19 +6,19 @@
 #include "gtest/gtest.h"
 
 class FakeDB : public Database {
-public:
+ public:
   bool put(std::string key, std::string val) { return store_.put(key, val); }
   std::optional<std::vector<std::string>> get(std::string key) {
     return store_.get(key);
   }
   bool remove(std::string key) { return store_.remove(key); }
 
-private:
+ private:
   KVStore store_;
 };
 
 class FuncsTest : public ::testing::Test {
-protected:
+ protected:
   FakeDB db;
   void SetUp() override {
     db.put("_users_", "gabroo");

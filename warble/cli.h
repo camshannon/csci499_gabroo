@@ -41,7 +41,7 @@ using grpc::ChannelInterface, grpc::CreateChannel,
 
 // Bridge between the main program (warble.cc) and the gRPC servers.
 class CLI {
-public:
+ public:
   CLI(std::shared_ptr<ChannelInterface> channel)
       : func_(FuncService::NewStub(channel)),
         functions_({"register_user", "warble", "follow", "read", "profile",
@@ -57,7 +57,7 @@ public:
   void Profile(std::string);
   void Stream(std::string);
 
-private:
+ private:
   int find_event_type_(std::string);
   std::unique_ptr<FuncService::Stub> func_; // interface to Func
   std::vector<std::string> functions_;
