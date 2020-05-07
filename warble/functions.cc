@@ -21,7 +21,6 @@ bool Warble(Database *db, Any req, Any *rep) {
   req.UnpackTo(&request);
   std::string username = request.username(), text = request.text(),
               parent_id = request.parent_id(), key = "_warbles_" + username;
-  std::vector<std::string> hashtags;
   // check if user is registered
   auto exists = db->get("_users_");
   if (exists) {
